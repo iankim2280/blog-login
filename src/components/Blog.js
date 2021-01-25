@@ -1,10 +1,17 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
 
 const Blog = ({handleLogout}) => {
   return (
-    <div>
-      <button onClick={handleLogout}>Logout</button>
-      Blog
+    <div className="blogPage">
+      <Button
+        className="logoutButton"
+        variant="contained"
+        color="primary"
+        onClick={handleLogout}
+      >
+        Logout
+      </Button>
     </div>
   );
 };
