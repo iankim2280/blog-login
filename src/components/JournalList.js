@@ -48,6 +48,9 @@ const JournalList = ({items, setItems}) => {
   const [editContent, setEditContent] = useState(null);
   const [editingContent, setEditingContent] = useState("");
 
+  const [editTags, setEditTags] = useState(null);
+  const [editingTags, setEditingTags] = useState("");
+
   function submitTitle(id) {
     const updatedTitle = [...items].map((item) => {
       if (item.id === id) {
@@ -69,6 +72,18 @@ const JournalList = ({items, setItems}) => {
     setItems(updatedContent);
     setEditContent(null);
   }
+
+  function submitTags(id) {
+    const updatedTags = [...items].map((item) => {
+      if (item.id === id) {
+        item.tags = editingTags;
+      }
+      return item;
+    });
+    setItems(updatedTags);
+    setEditTags(null);
+  }
+
   function deleteItem(id) {
     let updatedItems = [...items].filter((item) => item.id !== id);
     setItems(updatedItems);
@@ -77,14 +92,14 @@ const JournalList = ({items, setItems}) => {
     <List>
       <Table className="helloworld">
         <Row className="columns is-desktop">
-          <Title className="column">Title</Title>
-          <Title className="column">Content</Title>
-          <Title className="column">Tags</Title>
-          <Title className="column">Time</Title>
+          <Title className="column googleFont">Title</Title>
+          <Title className="column googleFont">Content</Title>
+          <Title className="column googleFont">Tags</Title>
+          <Title className="column googleFont">Time</Title>
         </Row>
         {items.map((item) => (
           <Row className="columns is-desktop" key={item.id}>
-            <Body className="column">
+            <Body className="column googleFont2">
               {console.log(items[0].title)}
               {item.id === editTitle ? (
                 <>
@@ -103,7 +118,7 @@ const JournalList = ({items, setItems}) => {
                 </>
               )}
             </Body>
-            <Body className="column">
+            <Body className="column googleFont2">
               {item.id === editContent ? (
                 <>
                   <input
@@ -121,9 +136,28 @@ const JournalList = ({items, setItems}) => {
                 </>
               )}
             </Body>
-            <Body className="column">{item.tags}</Body>
-            <Body className="column">{item.date}</Body>
-            <Button onClick={() => deleteItem(item.id)}>X</Button>
+            <Body className="column googleFont2">
+              {item.id === editTags ? (
+                <>
+                  <input
+                    type="text"
+                    onChange={(e) => setEditingTags(e.target.value)}
+                  />
+                  <Button onClick={() => submitTags(item.id)}>
+                    Submit Edits
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <SpanItem>{item.tags}</SpanItem>
+                  <Button onClick={() => setEditTags(item.id)}>Edit</Button>
+                </>
+              )}
+            </Body>
+            <Body className="column googleFont2">
+              <SpanItem>{item.date}</SpanItem>
+            </Body>
+            <Button onClick={() => deleteItem(item.id)}>Delete</Button>
           </Row>
         ))}
       </Table>
