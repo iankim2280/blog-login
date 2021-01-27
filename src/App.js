@@ -77,8 +77,8 @@ function App() {
 
   useEffect(() => {
     authListener();
+    // eslint-disable-next-line
   }, []);
-
   return (
     <div className="App">
       {user ? (

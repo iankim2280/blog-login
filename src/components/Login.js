@@ -8,7 +8,7 @@ const P = styled.p`
 const LoginTitle = styled.h1`
   align-items: center;
   font-size: 2em;
-  padding-top: 10px;
+  padding-top: 40px;
 `;
 const LoginSubTitle = styled.h1`
   align-items: center;
@@ -16,16 +16,60 @@ const LoginSubTitle = styled.h1`
   padding-bottom: 10px;
 `;
 
-const LoginForm = styled.div`
+const LoginForm1 = styled.div`
   margin: 100px auto;
   padding: 20px;
-  width: 30vw;
-  height: 60vh;
+  width: 20vw;
+  height: 43vh;
   //   border: 1px black solid;
   border-radius: 12%;
   box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
   background-color: #ececec;
   transition: ease all 0.2s;
+
+  @media only screen and (max-width: 1300px) {
+    width: 30vw;
+  }
+  @media only screen and (max-width: 900px) {
+    width: 40vw;
+  }
+  @media only screen and (max-width: 700px) {
+    width: 55vw;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 65vw;
+  }
+  @media only screen and (max-width: 415px) {
+    width: 75vw;
+  }
+`;
+
+const LoginForm2 = styled.div`
+  margin: 100px auto;
+  padding: 20px;
+  width: 25vw;
+  height: 50vh;
+  //   border: 1px black solid;
+  border-radius: 12%;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  background-color: #ececec;
+  transition: ease all 0.2s;
+
+  @media only screen and (max-width: 1300px) {
+    width: 30vw;
+  }
+  @media only screen and (max-width: 900px) {
+    width: 40vw;
+  }
+  @media only screen and (max-width: 700px) {
+    width: 55vw;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 65vw;
+  }
+  @media only screen and (max-width: 415px) {
+    width: 75vw;
+  }
 `;
 const Box = styled.div`
   width: 100%;
@@ -49,12 +93,11 @@ const Login = (props) => {
     passwordError,
   } = props;
   return (
-    <LoginForm className="loginForm">
-      <LoginTitle className="loginTitle googleFont">Welcome</LoginTitle>
-      {/* <h1 className="loginSubTitle googleFont">Login</h1> */}
-
+    <>
       {hasAccount ? (
-        <>
+        <LoginForm1 className="loginForm">
+          <LoginTitle className="loginTitle googleFont">Welcome</LoginTitle>
+          {/* <h1 className="loginSubTitle googleFont">Login</h1> */}
           <LoginSubTitle className="loginSubTitle googleFont">
             Login, Continue to blog
           </LoginSubTitle>
@@ -91,9 +134,11 @@ const Login = (props) => {
               </Button>
             </P>
           </Box>
-        </>
+        </LoginForm1>
       ) : (
-        <>
+        <LoginForm2 className="loginForm">
+          <LoginTitle className="loginTitle googleFont">Welcome</LoginTitle>
+          {/* <h1 className="loginSubTitle googleFont">Login</h1> */}
           <LoginSubTitle className="loginSubTitle googleFont">
             Register Your Account
           </LoginSubTitle>
@@ -146,9 +191,9 @@ const Login = (props) => {
               <Button onClick={() => setHasAccount(!hasAccount)}>Login</Button>
             </P>
           </Box>
-        </>
+        </LoginForm2>
       )}
-    </LoginForm>
+    </>
   );
 };
 
