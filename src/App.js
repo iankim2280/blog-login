@@ -1,5 +1,5 @@
 import Login from "./components/Login";
-import Journal from "./components/Journal";
+import Home from "./components/Home";
 import {useEffect, useState} from "react";
 import Firebase from "./Firebase";
 import "./app.scss";
@@ -82,7 +82,7 @@ function App() {
   return (
     <div className="App">
       {user ? (
-        <Journal handleLogout={handleLogout} />
+        <Home handleLogout={handleLogout} />
       ) : (
         <div className="loginPage">
           <Login

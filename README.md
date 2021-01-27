@@ -1,6 +1,6 @@
 ## Journal Entries App with React JS
 
-This project was bootstrapped with Create React App, Material-UI, Styled Components, Node-Sass, etc.
+This project was bootstrapped with Create React App, Firebase(Registration), Material-UI, Styled Components, Node-Sass, etc.
 
 ## Available Scripts
 

@@ -13,6 +13,12 @@
 .mg-t-10 {
   margin-top: 10px;
 }
+.mg-t-15 {
+  margin-top: 15px;
+}
+.mg-b-15 {
+  margin-bottom: 15px;
+}
 .loginPage {
   //   width: 85%;
   background-color: #e2e2e2;
@@ -33,7 +39,6 @@
 .googleFont2 {
   font-family: "Source Sans Pro", sans-serif;
 }
-
 .loginForm {
   .loginBox,
   .registerBox {
@@ -58,13 +63,20 @@
   display: flex;
   flex-direction: row;
 }
-// .MuiTableContainer-root {
-//   margin-top: 20px;
-//   width: 80% !important;
-// }
-// .MuiTableContainer-root {
-//   background-color: rgb(250, 240, 240) !important;
-// }
+
+.media-content-container {
+  width: 100%;
+}
+.title1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .title2 {
+    display: flex;
+    justify-content: space-between;
+    // font-size: 1.1em;
+  }
+}
 @media only screen and (max-width: 1040px) {
 }
 @media only screen and (max-width: 950px) {
@@ -78,5 +90,13 @@
   }
   .submitForm {
     flex-direction: column;
+  }
+  .title1 {
+    .title2 {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.3em;
+    }
   }
 }

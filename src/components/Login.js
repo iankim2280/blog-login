@@ -2,7 +2,9 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 
-const P = styled.p``;
+const P = styled.p`
+  color: #f00;
+`;
 const LoginTitle = styled.h1`
   align-items: center;
   font-size: 2em;
@@ -82,7 +84,7 @@ const Login = (props) => {
             >
               Login
             </Button>
-            <P>
+            <P style={{color: "#000"}}>
               or{" "}
               <Button onClick={() => setHasAccount(!hasAccount)}>
                 Register
@@ -139,7 +141,7 @@ const Login = (props) => {
             >
               Register
             </Button>
-            <P>
+            <P style={{color: "#000"}}>
               or{" "}
               <Button onClick={() => setHasAccount(!hasAccount)}>Login</Button>
             </P>
