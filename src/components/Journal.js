@@ -6,13 +6,7 @@ import Form from "./Form";
 import JournalList from "./JournalList";
 import Single from "./Single";
 import styled from "styled-components";
-import {
-  Switch,
-  Route,
-  BrowserRouter as Router,
-  Redirect,
-  Link,
-} from "react-router-dom";
+import {Switch, Route, BrowserRouter as Router, Link} from "react-router-dom";
 import Anchor from "@material-ui/core/Link";
 
 const BlogPage = styled.div`
@@ -60,6 +54,7 @@ const Jounal = ({handleLogout}) => {
     // adds new items to beginning of itemss array
     setItems([item, ...items]);
   }
+  z;
 
   function handleClick(e) {
     e.preventDefault();

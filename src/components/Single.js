@@ -9,13 +9,6 @@ const BlogPage = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding-top: 100px;
-`;
 
 const Single = ({handleLogout}) => {
   return (
