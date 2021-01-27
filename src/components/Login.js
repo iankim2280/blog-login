@@ -1,6 +1,34 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import styled from "styled-components";
 
+const P = styled.p``;
+const LoginTitle = styled.h1`
+  align-items: center;
+  font-size: 2em;
+  padding-top: 10px;
+`;
+const LoginSubTitle = styled.h1`
+  align-items: center;
+  font-size: 0.8em;
+  padding-bottom: 10px;
+`;
+
+const LoginForm = styled.div`
+  margin: 100px auto;
+  padding: 20px;
+  width: 30vw;
+  height: 60vh;
+  //   border: 1px black solid;
+  border-radius: 12%;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  background-color: #ececec;
+  transition: ease all 0.2s;
+`;
+const Box = styled.div`
+  width: 100%;
+  padding: 5px;
+`;
 const Login = (props) => {
   const {
     name,
@@ -19,14 +47,16 @@ const Login = (props) => {
     passwordError,
   } = props;
   return (
-    <div className="loginForm">
-      <h1 className="loginTitle googleFont">Welcome</h1>
+    <LoginForm className="loginForm">
+      <LoginTitle className="loginTitle googleFont">Welcome</LoginTitle>
       {/* <h1 className="loginSubTitle googleFont">Login</h1> */}
 
       {hasAccount ? (
         <>
-          <h1 className="loginSubTitle googleFont">Login, Continue to blog</h1>
-          <div className="loginBox">
+          <LoginSubTitle className="loginSubTitle googleFont">
+            Login, Continue to blog
+          </LoginSubTitle>
+          <Box className="loginBox">
             <input
               type="text"
               required
@@ -34,7 +64,7 @@ const Login = (props) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <p>{emailError}</p>
+            <P>{emailError}</P>
 
             <input
               type="password"
@@ -43,7 +73,7 @@ const Login = (props) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <p>{passwordError}</p>
+            <P>{passwordError}</P>
             <Button
               className="mg-b-10"
               variant="contained"
@@ -52,18 +82,20 @@ const Login = (props) => {
             >
               Login
             </Button>
-            <p>
+            <P>
               or{" "}
               <Button onClick={() => setHasAccount(!hasAccount)}>
                 Register
               </Button>
-            </p>
-          </div>
+            </P>
+          </Box>
         </>
       ) : (
         <>
-          <h1 className="loginSubTitle googleFont">Register Your Account</h1>
-          <div className="registerBox">
+          <LoginSubTitle className="loginSubTitle googleFont">
+            Register Your Account
+          </LoginSubTitle>
+          <Box className="registerBox">
             <input
               type="text"
               required
@@ -72,7 +104,7 @@ const Login = (props) => {
               onChange={(e) => setName(e.target.value)}
             />
 
-            <p></p>
+            <P />
             <input
               type="text"
               required
@@ -81,7 +113,7 @@ const Login = (props) => {
               onChange={(e) => setBioLine(e.target.value)}
             />
 
-            <p></p>
+            <P />
             <input
               type="text"
               required
@@ -89,7 +121,7 @@ const Login = (props) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <p>{emailError}</p>
+            <P>{emailError}</P>
 
             <input
               type="password"
@@ -98,7 +130,7 @@ const Login = (props) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <p>{passwordError}</p>
+            <P>{passwordError}</P>
             <Button
               className="mg-b-10"
               variant="contained"
@@ -107,14 +139,14 @@ const Login = (props) => {
             >
               Register
             </Button>
-            <p>
+            <P>
               or{" "}
               <Button onClick={() => setHasAccount(!hasAccount)}>Login</Button>
-            </p>
-          </div>
+            </P>
+          </Box>
         </>
       )}
-    </div>
+    </LoginForm>
   );
 };
 

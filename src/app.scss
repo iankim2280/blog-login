@@ -33,30 +33,10 @@
 .googleFont2 {
   font-family: "Source Sans Pro", sans-serif;
 }
-.loginTitle {
-  align-items: center;
-  font-size: 2em;
-  padding-top: 10px;
-}
-.loginSubTitle {
-  align-items: center;
-  font-size: 0.8em;
-  padding-bottom: 10px;
-}
+
 .loginForm {
-  margin: 100px auto;
-  padding: 20px;
-  width: 30vw;
-  height: 60vh;
-  //   border: 1px black solid;
-  border-radius: 12%;
-  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
-  background-color: #ececec;
-  transition: ease all 0.2s;
   .loginBox,
   .registerBox {
-    width: 100%;
-    padding: 5px;
     input {
       border: none;
       outline: none;

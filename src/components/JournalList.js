@@ -37,9 +37,9 @@ const Body = styled.div`
   margin-top: 10px;
   width: 25%;
   font-size: 1.1em;
-  span {
-    width: 100%;
-  }
+`;
+const SpanItem = styled.span`
+  width: 50%;
 `;
 const JournalList = ({items, setItems}) => {
   const [editTitle, setEditTitle] = useState(null);
@@ -98,7 +98,7 @@ const JournalList = ({items, setItems}) => {
                 </>
               ) : (
                 <>
-                  <span>{item.title}</span>
+                  <SpanItem>{item.title}</SpanItem>
                   <Button onClick={() => setEditTitle(item.id)}>Edit</Button>
                 </>
               )}
@@ -116,7 +116,7 @@ const JournalList = ({items, setItems}) => {
                 </>
               ) : (
                 <>
-                  <span>{item.content}</span>
+                  <SpanItem>{item.content}</SpanItem>
                   <Button onClick={() => setEditContent(item.id)}>Edit</Button>
                 </>
               )}
