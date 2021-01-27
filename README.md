@@ -5,7 +5,7 @@ This project was bootstrapped with Create React App, Firebase(Registration), Mat
 
 Live Site
 -----------
-Deployed page [Here](https://6011d74f84ce3c009d726cae--dreamy-shockley-01c3d8.netlify.app/)
+Deployed page [Here](https://dreamy-shockley-01c3d8.netlify.app/)
 
 
 Available Scripts
