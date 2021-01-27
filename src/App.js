@@ -1,11 +1,8 @@
-import {Switch, Route} from "react-router-dom";
-import "./app.scss";
-import Home from "./components/Home";
 import Login from "./components/Login";
-import Register from "./components/Register";
-import Blog from "./components/Blog";
+import Journal from "./components/Journal";
 import {useEffect, useState} from "react";
 import Firebase from "./Firebase";
+import "./app.scss";
 
 function App() {
   const [user, setUser] = useState("");
@@ -82,19 +79,10 @@ function App() {
     authListener();
   }, []);
 
-  const publicRouter = () => (
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
-      <Route path="/blog" component={Blog} />
-    </Switch>
-  );
   return (
     <div className="App">
-      {/* {publicRouter()} */}
       {user ? (
-        <Blog handleLogout={handleLogout} />
+        <Journal handleLogout={handleLogout} />
       ) : (
         <div className="loginPage">
           <Login
